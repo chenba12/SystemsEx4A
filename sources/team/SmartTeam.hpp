@@ -1,12 +1,10 @@
-//
-// Created by chen on 5/2/23.
-//
-
 #ifndef SYSTEMSEX4A_SMARTTEAM_H
 #define SYSTEMSEX4A_SMARTTEAM_H
 
+#include "../Team.hpp"
+
 namespace ariel {
-    class SmartTeam {
+    class SmartTeam : public Team {
 
     };
 }
