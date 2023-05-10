@@ -6,7 +6,7 @@ using namespace ariel;
 
 
 Cowboy::Cowboy(std::string name, const Point &location) :
-        Character(location, maxCowboyHP, std::move(name), typeCowboy),
+        Character(name, location, maxCowboyHP, typeCowboy),
         bullets(maxBullets) {}
 
 bool Cowboy::shoot(Character *enemy) {
@@ -18,7 +18,12 @@ bool Cowboy::hasboolets() const {
 }
 
 void Cowboy::reload() {
+    if (bullets == 6) throw std::logic_error("got max bullets already");
     bullets = 6;
+}
+
+int Cowboy::getBullets() const {
+    return bullets;
 }
 
 

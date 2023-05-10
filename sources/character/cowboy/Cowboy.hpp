@@ -18,6 +18,8 @@ namespace ariel {
         bool hasboolets() const;
 
         void reload();
+
+        int getBullets() const;
     };
 }
 
