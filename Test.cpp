@@ -139,6 +139,10 @@ TEST_CASE("damage check") {
 }
 
 TEST_CASE("team setup") {
+    Point p1(0, 0);
+    auto *youngNinja = new YoungNinja("youngNinja", p1);
+    Team team_A(youngNinja);
+    CHECK_EQ(team_A.getLeader(), youngNinja);
 
 }
 

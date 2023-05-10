@@ -26,6 +26,10 @@ namespace ariel {
 
         void print();
 
+        const std::array<Character, maxCharacters> &getCharacters() const;
+
+        Character *getLeader() const;
+
         virtual ~Team();
     };
 }

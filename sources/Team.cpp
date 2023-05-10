@@ -34,6 +34,14 @@ void Team::print() {
 
 }
 
+const std::array<Character, maxCharacters> &Team::getCharacters() const {
+    return characters;
+}
+
+Character *Team::getLeader() const {
+    return leader;
+}
+
 
 
 
