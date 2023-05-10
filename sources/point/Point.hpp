@@ -18,7 +18,7 @@ namespace ariel {
 
         double getY() const;
 
-        void print() const;
+        std::string print() const;
 
     };
 }

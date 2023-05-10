@@ -2,7 +2,7 @@
 #define SYSTEMSEX4A_TEAM_H
 
 #include "character/Character.hpp"
-#include "character/ninja/OldNinja.h"
+#include "character/ninja/OldNinja.hpp"
 #include "character/ninja/TrainedNinja.hpp"
 #include "character/ninja/YoungNinja.hpp"
 #include "character/cowboy/Cowboy.hpp"

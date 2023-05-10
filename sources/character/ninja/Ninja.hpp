@@ -15,8 +15,11 @@ namespace ariel {
     private:
 
         int speed;
+    protected:
+        Ninja(const std::string &name, const Point &location, int hp,
+              int speed, enum characterType type);
     public:
-        Ninja(const std::string &name, const Point &location, int hp, int speed, enum characterType type);
+
 
         void move(Character *enemy);
 

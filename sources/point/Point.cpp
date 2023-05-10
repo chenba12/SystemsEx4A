@@ -21,7 +21,7 @@ double Point::distance(const Point &point) const {
     return std::sqrt(xDiff * xDiff + yDiff * yDiff);
 }
 
-void Point::print() const {
+std::string Point::print() const {
     std::cout << "(" << this->x << "," << this->y << ")" << std::endl;
 }
 

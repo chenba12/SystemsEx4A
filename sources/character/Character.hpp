@@ -18,7 +18,7 @@ namespace ariel {
         enum characterType type;
 
     public:
-        Character(std::string name, const Point &location, int hp, enum characterType type);
+        Character(std::string &name, const Point &location, int hp, enum characterType type);
 
         Character();
 

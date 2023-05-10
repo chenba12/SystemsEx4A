@@ -1,5 +1,5 @@
-#ifndef SYSTEMSEX4A_OLDNINJA_H
-#define SYSTEMSEX4A_OLDNINJA_H
+#ifndef SYSTEMSEX4A_OLDNINJA_HPP
+#define SYSTEMSEX4A_OLDNINJA_HPP
 
 #include "Ninja.hpp"
 
@@ -12,4 +12,4 @@ namespace ariel {
     };
 }
 
-#endif //SYSTEMSEX4A_OLDNINJA_H
+#endif //SYSTEMSEX4A_OLDNINJA_HPP

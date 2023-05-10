@@ -4,10 +4,10 @@
 
 using namespace ariel;
 
-Character::Character(std::string name, const Point &location, int hp,
+Character::Character(std::string &name, const Point &location, int hp,
                      enum characterType type) : location(location),
                                                 hp(hp),
-                                                name(std::move(name)),
+                                                name(name),
                                                 type(type) {}
 
 Character::Character() : location(0, 0), hp(0), type(noType) {}
