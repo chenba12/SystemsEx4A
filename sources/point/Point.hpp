@@ -9,6 +9,11 @@ namespace ariel {
 
     public:
         Point(double x, double y);
+        Point();
+
+        bool operator==(const Point &rhs) const;
+
+        bool operator!=(const Point &rhs) const;
 
         double distance(const Point &point) const;
 

@@ -7,6 +7,8 @@ using namespace ariel;
 
 Point::Point(double x, double y) : x(x), y(y) {}
 
+Point::Point() : x(0), y(0) {}
+
 double Point::getX() const {
     return x;
 }
@@ -22,12 +24,22 @@ double Point::distance(const Point &point) const {
 }
 
 std::string Point::print() const {
-    std::cout << "(" << this->x << "," << this->y << ")" << std::endl;
+    return "(" + std::to_string(this->x) + "," + std::to_string(this->y) + ")";
 }
 
 Point ariel::moveTowards(Point &src, Point &dest, double distance) {
     return {0, 0};
 }
+
+bool Point::operator==(const Point &rhs) const {
+    return x == rhs.x &&
+           y == rhs.y;
+}
+
+bool Point::operator!=(const Point &rhs) const {
+    return !(rhs == *this);
+}
+
 
 
 

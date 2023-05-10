@@ -10,6 +10,7 @@ namespace ariel {
     const int youngNinjaHP = 100;
     const int trainedNinjaHP = 120;
     const int oldNinjaHP = 150;
+    const int ninjaDamage = 13;
 
     class Ninja : public Character {
     private:
@@ -18,6 +19,7 @@ namespace ariel {
     protected:
         Ninja(const std::string &name, const Point &location, int hp,
               int speed, enum characterType type);
+
     public:
 
 
