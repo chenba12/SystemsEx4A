@@ -19,6 +19,7 @@ void Team::add(Character *character) {
     }
 }
 
+//TODO implement
 void Team::attack(Team *enemyTeam) {
 
 }

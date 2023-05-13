@@ -1,16 +1,18 @@
 #include "Cowboy.hpp"
 
-#include <utility>
-
 using namespace ariel;
 
 
-Cowboy::Cowboy(std::string name, const Point &location) :
+Cowboy::Cowboy(std::string &name, const Point &location) :
         Character(name, location, maxCowboyHP, typeCowboy),
         bullets(maxBullets) {}
 
-bool Cowboy::shoot(Character *enemy) {
-    return false;
+void Cowboy::shoot(Character *enemy) {
+    if (bullets > 0 && enemy->isAlive()) {
+        enemy->hit(cowboyDamage);
+    } else {
+        this->reload();
+    }
 }
 
 bool Cowboy::hasboolets() const {

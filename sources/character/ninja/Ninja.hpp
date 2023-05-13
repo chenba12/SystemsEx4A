@@ -24,7 +24,7 @@ namespace ariel {
 
         void move(Character *enemy);
 
-        virtual void slash(Character *enemy);
+        void slash(Character *enemy) const;
 
         int getSpeed() const;
     };

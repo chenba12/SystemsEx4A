@@ -6,15 +6,16 @@
 namespace ariel {
     const int maxCowboyHP = 110;
     const int maxBullets = 6;
-    const int cowboyDamage = 10;
 
     class Cowboy : public Character {
     private:
         int bullets;
-    public:
-        Cowboy(std::string name, const Point &location);
+        const int cowboyDamage = 10;
 
-        bool shoot(Character *enemy);
+    public:
+        Cowboy(std::string &name, const Point &location);
+
+        void shoot(Character *enemy);
 
         bool hasboolets() const;
 

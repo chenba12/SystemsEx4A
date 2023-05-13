@@ -13,6 +13,10 @@ int Ninja::getSpeed() const {
     return speed;
 }
 
-void Ninja::slash(Character *enemy) {
-    enemy->hit(damage);
+void Ninja::slash(Character *enemy) const {
+    if (this->getLocation().distance(enemy->getLocation()) < 1) {
+        enemy->hit(damage);
+    } else {
+        throw std::logic_error("out of range");
+    }
 }

@@ -5,6 +5,8 @@
 
 namespace ariel {
     class SmartTeam : public Team {
+    public:
+        void attack(Team *enemyTeam) override;
 
     };
 }

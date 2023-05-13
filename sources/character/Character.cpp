@@ -20,10 +20,23 @@ double Character::distance(Character *otherChar) {
     return this->location.distance(otherChar->getLocation());
 }
 
-void Character::hit(int damage) {};
+void Character::hit(int damage) {
+    this->hp -= damage;
+}
 
 std::string Character::print() const {
-    return "";
+    std::string typeString;
+    if (this->type == typeYoungNinja || this->type == typeOldNinja || this->type == typeTrainedNinja) {
+        typeString = 'N';
+    } else if (this->type == typeCowboy) {
+        typeString = 'C';
+    }
+    if (this->isAlive()) {
+        return "(" + typeString + ") name: (" + getName() + ") HP: " + std::to_string(getHp())
+               + " Location: " + getLocation().print();
+    }
+    return "(" + typeString + ") name: (" + getName()
+           + ") Location: " + getLocation().print();
 }
 
 const Point &Character::getLocation() const {

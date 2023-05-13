@@ -28,7 +28,7 @@ namespace ariel {
 
         double distance(Character *otherChar);
 
-        virtual void hit(int damage);
+        void hit(int damage);
 
         virtual std::string print() const;
 

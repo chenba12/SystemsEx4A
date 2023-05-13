@@ -20,7 +20,7 @@ namespace ariel {
 
         void add(Character *character);
 
-        void attack(Team *enemyTeam);
+        virtual void attack(Team *enemyTeam);
 
         int stillAlive();
 
@@ -30,7 +30,7 @@ namespace ariel {
 
         Character *getLeader() const;
 
-        virtual ~Team();
+        ~Team();
     };
 }
 
