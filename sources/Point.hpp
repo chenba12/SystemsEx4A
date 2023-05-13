@@ -1,5 +1,4 @@
-#ifndef SYSTEMSEX4A_POINT_HPP
-#define SYSTEMSEX4A_POINT_HPP
+#pragma once
 
 #include "iostream"
 
@@ -30,6 +29,3 @@ namespace ariel {
 
     };
 }
-
-
-#endif //SYSTEMSEX4A_POINT_HPP

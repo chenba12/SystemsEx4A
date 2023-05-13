@@ -48,6 +48,7 @@ bool Point::operator==(const Point &otherPoint) const {
     return x == otherPoint.x &&
            y == otherPoint.y;
 }
+
 /**
  * @param otherPoint
  * @return check if 2 points don't have the same values
@@ -69,6 +70,7 @@ double Point::getX() const {
 double Point::getY() const {
     return y;
 }
+
 
 
 

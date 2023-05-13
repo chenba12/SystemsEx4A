@@ -1,5 +1,7 @@
 #include "Cowboy.hpp"
 
+#include <utility>
+
 using namespace ariel;
 
 /**
@@ -7,8 +9,8 @@ using namespace ariel;
  * @param name cowboy name
  * @param location the cowboy's starting location
  */
-Cowboy::Cowboy(std::string &name, const Point &location) :
-        Character(name, location, maxCowboyHP, typeCowboy),
+Cowboy::Cowboy(std::string name, Point location) :
+        Character(std::move(name), location, maxCowboyHP, typeCowboy),
         bullets(maxBullets) {}
 
 /**
@@ -17,12 +19,12 @@ Cowboy::Cowboy(std::string &name, const Point &location) :
  * @throws logic_error if the enemy is already dead
  */
 void Cowboy::shoot(Character *enemy) {
-    if (hasboolets()) {
-        if (enemy->isAlive())enemy->hit(cowboyDamage);
-        else throw std::logic_error("the enemy is dead");
-    } else {
-        this->reload();
-    }
+//    if (hasboolets()) {
+//        if (enemy->isAlive())enemy->hit(cowboyDamage);
+//        else throw std::logic_error("the enemy is dead");
+//    } else {
+//        this->reload();
+//    }
 }
 
 /**

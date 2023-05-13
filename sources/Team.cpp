@@ -44,15 +44,16 @@ void Team::attack(Team *enemyTeam) {
  * @return the amount of characters alive
  */
 int Team::stillAlive() {
-    int counter = 0;
-    for (size_t i = 0; i < maxCharacters; ++i) {
-        if (!characters[i].isDefault()) {
-            if (characters[i].isAlive()) {
-                counter++;
-            }
-        }
-    }
-    return counter;
+    return 0;
+//    int counter = 0;
+//    for (size_t i = 0; i < maxCharacters; ++i) {
+//        if (!characters[i].isDefault()) {
+//            if (characters[i].isAlive()) {
+//                counter++;
+//            }
+//        }
+//    }
+//    return counter;
 }
 
 /**

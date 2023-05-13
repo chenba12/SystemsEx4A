@@ -1,12 +1,12 @@
 #include "doctest.h"
 
-#include "sources/character/ninja/Ninja.hpp"
-#include "sources/point/Point.hpp"
-#include "sources/character/Character.hpp"
-#include "sources/character/ninja/OldNinja.hpp"
-#include "sources/character/ninja/YoungNinja.hpp"
-#include "sources/character/ninja/TrainedNinja.hpp"
-#include "sources/character/cowboy/Cowboy.hpp"
+#include "sources/Ninja.hpp"
+#include "sources/Point.hpp"
+#include "sources/Character.hpp"
+#include "sources/OldNinja.hpp"
+#include "sources/YoungNinja.hpp"
+#include "sources/TrainedNinja.hpp"
+#include "sources/Cowboy.hpp"
 #include "sources/Team.hpp"
 
 using namespace ariel;

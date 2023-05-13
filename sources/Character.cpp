@@ -11,7 +11,7 @@ using namespace ariel;
  * @param hp amount of hp
  * @param type
  */
-Character::Character(std::string name, const Point &location, int hp,
+Character::Character(std::string name, Point location, int hp,
                      enum characterType type) : location(location),
                                                 hp(hp),
                                                 name(std::move(name)),
@@ -27,7 +27,8 @@ Character::Character() : location(0, 0), hp(0), type(noType) {}
  * @return true if alive false otherwise
  */
 bool Character::isAlive() const {
-    return hp > 0;
+    return false;
+//    return hp > 0;
 }
 
 /**

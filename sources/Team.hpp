@@ -1,11 +1,11 @@
 #ifndef SYSTEMSEX4A_TEAM_H
 #define SYSTEMSEX4A_TEAM_H
 
-#include "character/Character.hpp"
-#include "character/ninja/OldNinja.hpp"
-#include "character/ninja/TrainedNinja.hpp"
-#include "character/ninja/YoungNinja.hpp"
-#include "character/cowboy/Cowboy.hpp"
+#include "Character.hpp"
+#include "OldNinja.hpp"
+#include "TrainedNinja.hpp"
+#include "YoungNinja.hpp"
+#include "Cowboy.hpp"
 #include "array"
 
 namespace ariel {

@@ -1,7 +1,7 @@
 #ifndef SYSTEMSEX4A_CHARACTER_HPP
 #define SYSTEMSEX4A_CHARACTER_HPP
 
-#include "../point/Point.hpp"
+#include "Point.hpp"
 #include <iostream>
 
 namespace ariel {
@@ -18,7 +18,7 @@ namespace ariel {
         const enum characterType type;
 
     public:
-        Character(std::string name, const Point &location, int hp, enum characterType type);
+        Character(std::string name, Point location, int hp, enum characterType type);
 
         Character();
 

@@ -1,5 +1,4 @@
-#ifndef SYSTEMSEX4A_YOUNGNINJA_H
-#define SYSTEMSEX4A_YOUNGNINJA_H
+#pragma once
 
 #include "Ninja.hpp"
 
@@ -10,5 +9,3 @@ namespace ariel {
         YoungNinja(const std::string &name, const Point &location);
     };
 }
-
-#endif //SYSTEMSEX4A_YOUNGNINJA_H

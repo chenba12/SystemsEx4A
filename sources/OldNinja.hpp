@@ -7,7 +7,7 @@ namespace ariel {
     class OldNinja : public Ninja {
 
     public:
-        OldNinja(const std::string &name, const Point &location);
+        OldNinja(std::string name, Point location);
 
     };
 }
