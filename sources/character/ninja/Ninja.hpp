@@ -14,7 +14,7 @@ namespace ariel {
     class Ninja : public Character {
     private:
         const int damage = 13;
-        int speed;
+        const int speed;
     protected:
         Ninja(const std::string &name, const Point &location, int hp,
               int speed, enum characterType type);

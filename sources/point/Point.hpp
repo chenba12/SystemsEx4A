@@ -14,11 +14,11 @@ namespace ariel {
 
         Point();
 
-        bool operator==(const Point &rhs) const;
+        bool operator==(const Point &otherPoint) const;
 
-        bool operator!=(const Point &rhs) const;
+        bool operator!=(const Point &otherPoint) const;
 
-        double distance(const Point &point) const;
+        double distance(const Point &otherPoint) const;
 
         friend Point moveTowards(const Point &src, const Point &dest, double distance);
 

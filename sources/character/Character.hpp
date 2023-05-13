@@ -15,12 +15,15 @@ namespace ariel {
         int hp;
         std::string name;
 
-        enum characterType type;
+        const enum characterType type;
 
     public:
         Character(std::string name, const Point &location, int hp, enum characterType type);
 
         Character();
+
+        Character& operator=(const Character& other);
+
 
         virtual ~Character();
 
