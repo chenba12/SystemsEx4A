@@ -143,6 +143,49 @@ TEST_CASE("team setup") {
     auto *youngNinja = new YoungNinja("youngNinja", p1);
     Team team_A(youngNinja);
     CHECK_EQ(team_A.getLeader(), youngNinja);
+    CHECK_THROWS(team_A.add(youngNinja));
+    for (int i = 0; i < 9; ++i) {
+        team_A.add(new YoungNinja("", p1));
+    }
+
+    auto young = new YoungNinja("", p1);
+    CHECK_THROWS(team_A.add(young)); //team is full
+    CHECK_EQ(team_A.stillAlive(), 10);
+
+}
+
+
+TEST_CASE("team attack") {
+    Point p1(0, 0);
+    auto *aLeader = new YoungNinja("youngNinja", p1);
+    auto *bLeader = new YoungNinja("youngNinja", p1);
+    Team teamA(aLeader);
+    Team teamB(bLeader);
+    for (int i = 0; i < 9; ++i) {
+        if (i >= 5) {
+            teamA.add(new Cowboy("", p1));
+            teamB.add(new OldNinja("", p1));
+        } else {
+            teamA.add(new YoungNinja("", p1));
+            teamB.add(new OldNinja("", p1));
+        }
+    }
+    while (aLeader->isAlive()) {
+        bLeader->slash(aLeader);
+    }
+    teamA.attack(&teamB);
+    CHECK_NE(teamA.getLeader(), aLeader); // check that the leader got replaced
+
+    while (teamA.stillAlive() > 0 && teamB.stillAlive() > 0) {
+        teamA.attack(&teamB);
+        teamB.attack(&teamA);
+    }
+    CHECK(((teamA.stillAlive() == 0) || (teamB.stillAlive() == 0)));
+    if (teamA.stillAlive() == 0) {
+        CHECK_THROWS(teamA.attack(&teamB));
+    } else if (teamB.stillAlive() == 0) {
+        CHECK_THROWS(teamB.attack(&teamA));
+    }
 
 }
 

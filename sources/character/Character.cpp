@@ -4,25 +4,23 @@
 
 using namespace ariel;
 
-Character::Character(std::string &name, const Point &location, int hp,
+Character::Character(std::string name, const Point &location, int hp,
                      enum characterType type) : location(location),
                                                 hp(hp),
-                                                name(name),
+                                                name(std::move(name)),
                                                 type(type) {}
 
 Character::Character() : location(0, 0), hp(0), type(noType) {}
 
-bool Character::isAlive() {
-    return false;
+bool Character::isAlive() const {
+    return hp > 0;
 }
 
 double Character::distance(Character *otherChar) {
-    return 0;
+    return this->location.distance(otherChar->getLocation());
 }
 
-void Character::hit(int damage) {
-
-}
+void Character::hit(int damage) {};
 
 std::string Character::print() const {
     return "";
@@ -47,6 +45,8 @@ characterType Character::getType() const {
 bool Character::isDefault() const {
     return false;
 }
+
+Character::~Character() = default;
 
 
 

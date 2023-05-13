@@ -10,11 +10,10 @@ namespace ariel {
     const int youngNinjaHP = 100;
     const int trainedNinjaHP = 120;
     const int oldNinjaHP = 150;
-    const int ninjaDamage = 13;
 
     class Ninja : public Character {
     private:
-
+        const int damage = 13;
         int speed;
     protected:
         Ninja(const std::string &name, const Point &location, int hp,
@@ -25,7 +24,7 @@ namespace ariel {
 
         void move(Character *enemy);
 
-        void slash(Character *enemy);
+        virtual void slash(Character *enemy);
 
         int getSpeed() const;
     };

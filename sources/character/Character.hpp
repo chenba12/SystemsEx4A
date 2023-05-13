@@ -6,7 +6,7 @@
 
 namespace ariel {
     enum characterType {
-        noType = 0, typeNinja = 1, typeYoungNinja = 2, typeTrainedNinja = 3, typeOldNinja = 4, typeCowboy = 5
+        noType = 0, typeYoungNinja = 1, typeTrainedNinja = 2, typeOldNinja = 3, typeCowboy = 4
     };
 
     class Character {
@@ -18,15 +18,17 @@ namespace ariel {
         enum characterType type;
 
     public:
-        Character(std::string &name, const Point &location, int hp, enum characterType type);
+        Character(std::string name, const Point &location, int hp, enum characterType type);
 
         Character();
 
-        bool isAlive();
+        virtual ~Character();
+
+        bool isAlive() const;
 
         double distance(Character *otherChar);
 
-        void hit(int damage);
+        virtual void hit(int damage);
 
         virtual std::string print() const;
 

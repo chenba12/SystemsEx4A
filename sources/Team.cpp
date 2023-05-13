@@ -8,10 +8,7 @@ Team::Team(Character *leader) : leader(leader) {
 
 }
 
-Team::~Team() {
-
-
-}
+Team::~Team() = default;
 
 void Team::add(Character *character) {
     for (size_t i = 0; i < maxCharacters; ++i) {
@@ -27,11 +24,23 @@ void Team::attack(Team *enemyTeam) {
 }
 
 int Team::stillAlive() {
-    return 0;
+    int counter = 0;
+    for (size_t i = 0; i < maxCharacters; ++i) {
+        if (!characters[i].isDefault()) {
+            if (characters[i].isAlive()) {
+                counter++;
+            }
+        }
+    }
+    return counter;
 }
 
 void Team::print() {
-
+    for (size_t i = 0; i < maxCharacters; ++i) {
+        if (!characters[i].isDefault()) {
+            std::cout << characters[i].print() << std::endl;
+        }
+    }
 }
 
 const std::array<Character, maxCharacters> &Team::getCharacters() const {

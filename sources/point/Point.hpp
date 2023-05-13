@@ -1,6 +1,8 @@
 #ifndef SYSTEMSEX4A_POINT_HPP
 #define SYSTEMSEX4A_POINT_HPP
 
+#include "iostream"
+
 namespace ariel {
     class Point {
     private:
@@ -9,6 +11,7 @@ namespace ariel {
 
     public:
         Point(double x, double y);
+
         Point();
 
         bool operator==(const Point &rhs) const;
@@ -17,7 +20,7 @@ namespace ariel {
 
         double distance(const Point &point) const;
 
-        friend Point moveTowards(Point &src, Point &dest, double distance);
+        friend Point moveTowards(const Point &src, const Point &dest, double distance);
 
         double getX() const;
 
