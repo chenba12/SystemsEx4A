@@ -2,6 +2,8 @@
 
 using namespace ariel;
 
+SmartTeam::SmartTeam(Character *leader) : Team(leader) {}
+
 //TODO implement
 /**
  * does something
@@ -10,3 +12,4 @@ using namespace ariel;
 void SmartTeam::attack(Team *enemyTeam) {
     Team::attack(enemyTeam);
 }
+

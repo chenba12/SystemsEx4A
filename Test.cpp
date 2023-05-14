@@ -8,6 +8,7 @@
 #include "sources/TrainedNinja.hpp"
 #include "sources/Cowboy.hpp"
 #include "sources/Team.hpp"
+#include "sources/Team2.hpp"
 
 using namespace ariel;
 
@@ -190,9 +191,68 @@ TEST_CASE("team attack") {
 }
 
 TEST_CASE("team 2") {
+    Point p1(0, 0);
+    auto *aLeader = new YoungNinja("youngNinja", p1);
+    auto *bLeader = new YoungNinja("youngNinja", p1);
+    Team2 teamA(aLeader);
+    Team2 teamB(bLeader);
+    for (int i = 0; i < 9; ++i) {
+        if (i >= 5) {
+            teamA.add(new Cowboy("", p1));
+            teamB.add(new OldNinja("", p1));
+        } else {
+            teamA.add(new YoungNinja("", p1));
+            teamB.add(new OldNinja("", p1));
+        }
+    }
+    while (aLeader->isAlive()) {
+        bLeader->slash(aLeader);
+    }
+    teamA.attack(&teamB);
+    CHECK_NE(teamA.getLeader(), aLeader); // check that the leader got replaced
+
+    while (teamA.stillAlive() > 0 && teamB.stillAlive() > 0) {
+        teamA.attack(&teamB);
+        teamB.attack(&teamA);
+    }
+    CHECK(((teamA.stillAlive() == 0) || (teamB.stillAlive() == 0)));
+    if (teamA.stillAlive() == 0) {
+        CHECK_THROWS(teamA.attack(&teamB));
+    } else if (teamB.stillAlive() == 0) {
+        CHECK_THROWS(teamB.attack(&teamA));
+    }
 
 }
 
-TEST_CASE("smart team") {
+TEST_CASE("Smart team") {
+    Point p1(0, 0);
+    auto *aLeader = new YoungNinja("youngNinja", p1);
+    auto *bLeader = new YoungNinja("youngNinja", p1);
+    Team2 teamA(aLeader);
+    Team2 teamB(bLeader);
+    for (int i = 0; i < 9; ++i) {
+        if (i >= 5) {
+            teamA.add(new Cowboy("", p1));
+            teamB.add(new OldNinja("", p1));
+        } else {
+            teamA.add(new YoungNinja("", p1));
+            teamB.add(new OldNinja("", p1));
+        }
+    }
+    while (aLeader->isAlive()) {
+        bLeader->slash(aLeader);
+    }
+    teamA.attack(&teamB);
+    CHECK_NE(teamA.getLeader(), aLeader); // check that the leader got replaced
 
+    while (teamA.stillAlive() > 0 && teamB.stillAlive() > 0) {
+        teamA.attack(&teamB);
+        teamB.attack(&teamA);
+    }
+    CHECK(((teamA.stillAlive() == 0) || (teamB.stillAlive() == 0)));
+    if (teamA.stillAlive() == 0) {
+        CHECK_THROWS(teamA.attack(&teamB));
+    } else if (teamB.stillAlive() == 0) {
+        CHECK_THROWS(teamB.attack(&teamA));
+    }
 }
