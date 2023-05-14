@@ -2,7 +2,6 @@
 
 #include "sources/Ninja.hpp"
 #include "sources/Point.hpp"
-#include "sources/Character.hpp"
 #include "sources/OldNinja.hpp"
 #include "sources/YoungNinja.hpp"
 #include "sources/TrainedNinja.hpp"

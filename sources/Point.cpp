@@ -7,15 +7,15 @@ using namespace ariel;
 
 /**
  * ctr
- * @param x coordinate
- * @param y coordinate
+ * @param xVal coordinate
+ * @param yVal coordinate
  */
-Point::Point(double x, double y) : x(x), y(y) {}
+Point::Point(double xVal, double yVal) : xVal(xVal), yVal(yVal) {}
 
 /**
  * empty ctr default to (0,0)
  */
-Point::Point() : x(0), y(0) {}
+Point::Point() : xVal(0), yVal(0) {}
 
 /**
  * check the distance between this point and otherPoint
@@ -23,8 +23,8 @@ Point::Point() : x(0), y(0) {}
  * @return the distance
  */
 double Point::distance(const Point &otherPoint) const {
-    double xDiff = this->x - otherPoint.x;
-    double yDiff = this->y - otherPoint.y;
+    double xDiff = this->xVal - otherPoint.xVal;
+    double yDiff = this->yVal - otherPoint.yVal;
     return std::sqrt(xDiff * xDiff + yDiff * yDiff);
 }
 
@@ -32,7 +32,7 @@ double Point::distance(const Point &otherPoint) const {
  * @return a string representing the point between parenthesis
  */
 std::string Point::print() const {
-    return "(" + std::to_string(this->x) + "," + std::to_string(this->y) + ")";
+    return "(" + std::to_string(this->xVal) + "," + std::to_string(this->yVal) + ")";
 }
 
 //TODO fix this
@@ -45,8 +45,8 @@ Point ariel::moveTowards(const Point &src, const Point &dest, double distance) {
  * @return check if 2 points have the same values
  */
 bool Point::operator==(const Point &otherPoint) const {
-    return x == otherPoint.x &&
-           y == otherPoint.y;
+    return xVal == otherPoint.xVal &&
+           yVal == otherPoint.yVal;
 }
 
 /**
@@ -58,17 +58,17 @@ bool Point::operator!=(const Point &otherPoint) const {
 }
 
 /**
- * @return current x value
+ * @return current xVal value
  */
 double Point::getX() const {
-    return x;
+    return xVal;
 }
 
 /**
- * @return current y value
+ * @return current yVal value
  */
 double Point::getY() const {
-    return y;
+    return yVal;
 }
 
 

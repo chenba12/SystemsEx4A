@@ -12,17 +12,23 @@ namespace ariel {
     class Character {
     private:
         Point location;
-        int hp;
+        int hitPoints;
         std::string name;
 
-        const enum characterType type;
+        enum characterType type;
 
     public:
-        Character(std::string name, Point location, int hp, enum characterType type);
+        Character(std::string name, Point location, int hitPoints, enum characterType type);
 
         Character();
 
-        Character& operator=(const Character& other);
+        Character &operator=(const Character &other);
+
+        Character(const Character &other);
+
+        Character(Character &&other) noexcept;
+
+        Character &operator=(Character &&other) noexcept;
 
 
         virtual ~Character();

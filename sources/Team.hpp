@@ -13,10 +13,18 @@ namespace ariel {
 
     class Team {
     private:
-        std::array<Character, maxCharacters> characters;
+        std::array<Character*, maxCharacters> characters{};
         Character *leader;
     public:
         explicit Team(Character *leader);
+
+        Team(const Team &other);
+
+        Team(Team &&other) noexcept;
+
+        Team &operator=(const Team &other);
+
+        Team &operator=(Team &&other) noexcept;
 
         void add(Character *character);
 
@@ -26,11 +34,11 @@ namespace ariel {
 
         void print();
 
-        const std::array<Character, maxCharacters> &getCharacters() const;
+        const std::array<Character*, maxCharacters> &getCharacters() const;
 
         Character *getLeader() const;
 
-        ~Team();
+        virtual ~Team();
     };
 }
 

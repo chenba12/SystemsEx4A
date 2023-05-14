@@ -8,12 +8,12 @@ using namespace ariel;
  * ninja ctr
  * @param name
  * @param location
- * @param hp
+ * @param hitPoints
  * @param speed
  * @param type
  */
-Ninja::Ninja(std::string name, Point location, int hp, int speed, enum characterType type)
-        : Character(std::move(name), location, hp, type), speed(speed) {}
+Ninja::Ninja(std::string name, Point location, int hitPoints, int speed, enum characterType type)
+        : Character(std::move(name), location, hitPoints, type), speed(speed) {}
 
 /**
  * move towards the enemy

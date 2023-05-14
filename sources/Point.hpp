@@ -5,11 +5,11 @@
 namespace ariel {
     class Point {
     private:
-        double x;
-        double y;
+        double xVal;
+        double yVal;
 
     public:
-        Point(double x, double y);
+        Point(double xVal, double yVal);
 
         Point();
 
